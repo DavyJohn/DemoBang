@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:scrollbars="none"
     tools:context=".main.MainActivity">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical">
@@ -16,7 +16,16 @@
             android:id="@+id/convenientBanner"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:canLoop="true"/> //控制循环与否
+            app:canLoop="true"
+            android:background="#145875"/> //控制循环与否
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/bannertext"
+            android:layout_above="@+id/zlistview"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         //选动画效果
         <ListView
@@ -28,7 +37,8 @@
             <com.saint.bang.utils.ZListView
                 android:layout_width="match_parent"
                 android:layout_height="440dp"
-                android:id="@+id/zlistview"/>
+                android:id="@+id/zlistview"
+                android:layout_below="@+id/convenientBanner" />
 
-    </LinearLayout>
+    </RelativeLayout>
 </ScrollView>

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ToxicBakery.viewpager.transforms.ABaseTransformer;
@@ -50,6 +51,7 @@ import java.util.Map;
 public class MainActivity extends BaseActivity  implements AdapterView.OnItemClickListener,ViewPager.OnPageChangeListener,OnItemClickListener{
     private ConvenientBanner convenientBanner;
     private ZListView zListView;
+    private TextView bannertext;
     private ArrayList<Integer> localImages = new ArrayList<Integer>();//本地image
     private List<String> networkImages;
     private BannerData bannerData;
@@ -81,6 +83,7 @@ public class MainActivity extends BaseActivity  implements AdapterView.OnItemCli
     private void initViews() {
         convenientBanner = (ConvenientBanner) findViewById(R.id.convenientBanner);
         convenientBanner.setPageTransformer(depthPageTransformer);
+        bannertext= (TextView) findViewById(R.id.bannertext);
         listView = (ListView) findViewById(R.id.listView);
         transformerArrayAdapter = new ArrayAdapter(this,R.layout.adapter_transformer,transformerList);
         listView.setAdapter(transformerArrayAdapter);
@@ -325,6 +328,7 @@ public class MainActivity extends BaseActivity  implements AdapterView.OnItemCli
 
     @Override
     public void onPageSelected(int position) {
+        bannertext.setText("监听到翻到第" + position + "了");
 //        Toast.makeText(this, "监听到翻到第" + position + "了", Toast.LENGTH_SHORT).show();
 
     }
