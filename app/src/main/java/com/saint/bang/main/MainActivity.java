@@ -187,9 +187,9 @@ public class MainActivity extends BaseActivity  implements AdapterView.OnItemCli
  加入测试Views
  * */
     private void loadTestDatas(int index) {
-//        //本地图片集合
-//        for (int position = 0; position < 7; position++)
-//            localImages.add(getResId("ic_test_" + position, R.drawable.class));
+        //本地图片集合
+        for (int position = 0; position < 7; position++)
+            localImages.add(getResId("ic_test_" + position, R.drawable.class));
 
 
 //        //各种翻页效果
