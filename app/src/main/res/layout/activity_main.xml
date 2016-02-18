@@ -7,38 +7,146 @@
     android:orientation="vertical"
     android:scrollbars="none"
     tools:context=".main.MainActivity">
-    <RelativeLayout
-        android:layout_width="fill_parent"
+    <!--<RelativeLayout-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:orientation="vertical">-->
+        <!--<com.bigkoo.convenientbanner.ConvenientBanner-->
+            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--android:id="@+id/convenientBanner"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp"-->
+            <!--app:canLoop="true"-->
+            <!--android:background="#145875"/> //控制循环与否-->
+        <!--<TextView-->
+            <!--android:layout_margin="5dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:id="@+id/bannertext"-->
+            <!--android:layout_above="@+id/zlistview"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true" />-->
+
+        <!--//选动画效果-->
+        <!--<ListView-->
+            <!--android:id="@+id/listView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="440dp"-->
+            <!--android:visibility="gone"/>-->
+<!--</RelativeLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
+        <!--<com.saint.bang.utils.ZListView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:id="@+id/zlistview"-->
+            <!--android:layout_below="@+id/convenientBanner" />-->
+    <!--</LinearLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
-        <com.bigkoo.convenientbanner.ConvenientBanner
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/convenientBanner"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_margin="5dp">
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:canLoop="true"
-            android:background="#145875"/> //控制循环与否
-        <TextView
-            android:layout_margin="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:id="@+id/bannertext"
-            android:layout_above="@+id/zlistview"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_height="587dp"
+            android:id="@+id/framelayout"
+            />
 
-        //选动画效果
-        <ListView
-            android:id="@+id/listView"
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/indicator"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="440dp"
-            android:visibility="gone"/>
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bottom_navigation_bar"
+            >
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/image_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/home_page_icon"/>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/text_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tab_home"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/interrogation"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/image_interrogation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/interrogation_icon"/>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/text_interrogation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tab_buyying"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/shopping"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/image_shopping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/shopping_cart_icon"/>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/text_shopping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tab_shopping"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/user">
+                <ImageView
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/image_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/my_icon"/>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/text_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tab_userCenter"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
-            <com.saint.bang.utils.ZListView
-                android:layout_width="match_parent"
-                android:layout_height="440dp"
-                android:id="@+id/zlistview"
-                android:layout_below="@+id/convenientBanner" />
 
-    </RelativeLayout>
 </ScrollView>

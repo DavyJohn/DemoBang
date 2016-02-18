@@ -7,4 +7,9 @@
     <string name="xlistview_header_last_time">上次更新时间：</string>
     <string name="xlistview_footer_hint_normal">点击查看更多...</string>
     <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="tab_home">首页</string>
+    <string name="tab_buyying">问诊</string>
+    <string name="tab_shopping">购物车</string>
+    <string name="tab_userCenter">我的</string>
+
 </resources>
