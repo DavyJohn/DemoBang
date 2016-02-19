@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ToxicBakery.viewpager.transforms.ABaseTransformer;
 import com.ToxicBakery.viewpager.transforms.AccordionTransformer;
@@ -36,7 +37,6 @@ import com.saint.bang.utils.Constant;
 import com.saint.bang.utils.NetworkImageHolderView;
 import com.saint.bang.utils.ZListView;
 
-import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -82,6 +82,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
         zListView= (ZListView) view.findViewById(R.id.zlistview);
         zListView.setPullLoadEnable(true);
+
         View header=LayoutInflater.from(getActivity()).inflate(R.layout.banner, null);
         convenientBanner= (ConvenientBanner) header.findViewById(R.id.convenientBanner);
         bannertext= (TextView) header.findViewById(R.id.bannertext);
@@ -164,7 +165,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
         }, networkImages)
                 .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
                 .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
-//                .setOnPageChangeListener(getActivity())
+                .setOnPageChangeListener(this)
                 .setOnItemClickListener(this);
         convenientBanner.setManualPageable(true);
 
@@ -269,16 +270,16 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
         }
     }
 
-    public static int getResId(String variableName, Class<?> c) {
-        try {
-            Field idField = c.getDeclaredField(variableName);
-            return idField.getInt(idField);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
-
-    }
+//    public static int getResId(String variableName, Class<?> c) {
+//        try {
+//            Field idField = c.getDeclaredField(variableName);
+//            return idField.getInt(idField);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return -1;
+//        }
+//
+//    }
     // 开始自动翻页
 
     @Override
@@ -299,7 +300,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
     @Override
     public void onItemClick(int position) {
-
+        Toast.makeText(getActivity(),"点击第"+position+"页",Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -310,6 +311,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     @Override
     public void onPageSelected(int position) {
     bannertext.setText("pager"+position);
+//        Toast.makeText(getActivity(),"翻到"+position+"页",Toast.LENGTH_SHORT).show();
     }
 
     @Override
