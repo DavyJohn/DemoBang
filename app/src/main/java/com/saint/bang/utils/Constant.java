@@ -20,8 +20,8 @@ public class Constant {
     public static final String SERVER_URL = "";
 
     /**
-     * num选择轮播图的轮播动画 */
-    public static  final Integer NUM= Integer.valueOf(9);
+     * num选择轮播图的轮播动画 0-13*/
+    public static  final Integer NUM= Integer.valueOf(7);
 
 
 

@@ -21,10 +21,15 @@ public class NetworkImageHolderView implements Holder<String> {
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         return imageView;
     }
+    /**
+     * @param data 为图片的imageurl*/
 
     @Override
     public void UpdateUI(Context context,int position, String data) {
+        //不能正常显示的图片
         imageView.setImageResource(R.drawable.ic_default_adimage);
+
+//        Log.e("NetworkImageHolderView", "UpdateUI中" + "postion==============>" + position + "===========data=================>" + data);
         ImageLoader.getInstance().displayImage(data,imageView);
     }
 }

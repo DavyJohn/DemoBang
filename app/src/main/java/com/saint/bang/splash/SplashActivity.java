@@ -1,4 +1,4 @@
-package com.saint.bang.login;
+package com.saint.bang.splash;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,7 +24,7 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_main);
+        setContentView(R.layout.splash_layout);
 
         handler.postDelayed(new Runnable() {
             @Override

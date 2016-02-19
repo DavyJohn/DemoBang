@@ -123,7 +123,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                 break;
             case 3:
-                image_user.setImageResource(R.mipmap.grab_treasure_icon_not_selected);
+                image_user.setImageResource(R.mipmap.my_icon_not_selected);
                 text_user.setTextColor(Color.RED);
                 if (userFragment==null){
                     Log.e("fragment===================>","home");
@@ -137,7 +137,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         transaction.commit();
     }
     private void clean(){
-        image_user.setImageResource(R.mipmap.home_page_icon);
+        image_user.setImageResource(R.mipmap.my_icon);
         text_user.setTextColor(Color.BLACK);
 
         image_shopping.setImageResource(R.mipmap.shopping_cart_icon);
@@ -146,7 +146,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         image_interrogation.setImageResource(R.mipmap.interrogation_icon);
         text_interrogation.setTextColor(Color.BLACK);
 
-        image_home.setImageResource(R.mipmap.my_icon);
+        image_home.setImageResource(R.mipmap.home_page_icon);
         text_home.setTextColor(Color.BLACK);
     }
     private void hideFragment(FragmentTransaction transaction){

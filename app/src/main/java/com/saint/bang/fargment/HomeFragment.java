@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     private String[] images = {"http://img2.imgtn.bdimg.com/it/u=3093785514,1341050958&fm=21&gp=0.jpg",
             "http://img2.3lian.com/2014/f2/37/d/40.jpg",
             "http://d.3987.com/sqmy_131219/001.jpg",
+            "http://img5.imgtn.bdimg.com/it/u=2292555668,1147946895&fm=21&gp=0.jpg",
             "http://img2.3lian.com/2014/f2/37/d/39.jpg",
             "http://www.8kmm.com/UploadFiles/2012/8/201208140920132659.jpg",
             "http://f.hiphotos.baidu.com/image/h%3D200/sign=1478eb74d5a20cf45990f9df460b4b0c/d058ccbf6c81800a5422e5fdb43533fa838b4779.jpg",
@@ -97,6 +99,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
                     @Override
                     public void run() {
                     //刷新
+                        Log.e("key","下拉刷新");
                         onLoad();
                     }
                 },2000);
@@ -129,11 +132,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
         return view;
     }
-//    private  void banner(){
-//
-//
-//
-//    }
+
     private void init(){
 //        initImageLoader();
         loadTestDatas(Constant.NUM);
@@ -301,6 +300,8 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     @Override
     public void onItemClick(int position) {
         Toast.makeText(getActivity(),"点击第"+position+"页",Toast.LENGTH_SHORT).show();
+        System.out.print(networkImages.get(position));
+        Log.e("url:=====>","第"+position+"pager"+"===========>"+networkImages.get(position));
     }
 
     @Override
@@ -310,7 +311,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
 
     @Override
     public void onPageSelected(int position) {
-    bannertext.setText("pager"+position);
+    bannertext.setText("pager" + position);
 //        Toast.makeText(getActivity(),"翻到"+position+"页",Toast.LENGTH_SHORT).show();
     }
 
